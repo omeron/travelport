@@ -5,85 +5,217 @@ namespace FilippoToso\Travelport\UniversalRecord;
 class ProviderReservationInfo
 {
 
-    /**
-     * @var typeProviderCode $ProviderCode
-     */
-    protected $ProviderCode = null;
+  /**
+   * @var typeRef $Key
+   */
+  protected $Key = null;
 
-    /**
-     * @var typeProviderLocatorCode $ProviderLocatorCode
-     */
-    protected $ProviderLocatorCode = null;
+  /**
+   * @var typeProviderCode $ProviderCode
+   */
+  protected $ProviderCode = null;
 
-    /**
-     * @var typeSupplierCode $SupplierCode
-     */
-    protected $SupplierCode = null;
+  /**
+   * @var typeProviderLocatorCode $LocatorCode
+   */
+  protected $LocatorCode = null;
 
-    /**
-     * @param typeProviderCode $ProviderCode
-     * @param typeProviderLocatorCode $ProviderLocatorCode
-     * @param typeSupplierCode $SupplierCode
-     */
-    public function __construct($ProviderCode = null, $ProviderLocatorCode = null, $SupplierCode = null)
-    {
-      $this->ProviderCode = $ProviderCode;
-      $this->ProviderLocatorCode = $ProviderLocatorCode;
-      $this->SupplierCode = $SupplierCode;
-    }
+  /**
+   * @var \DateTime $CreateDate
+   */
+  protected $CreateDate = null;
 
-    /**
-     * @return typeProviderCode
-     */
-    public function getProviderCode()
-    {
-      return $this->ProviderCode;
-    }
+  /**
+   * @var date $HostCreateDate
+   */
+  protected $HostCreateDate = null;
 
-    /**
-     * @param typeProviderCode $ProviderCode
-     * @return \FilippoToso\Travelport\UniversalRecord\ProviderReservationInfo
-     */
-    public function setProviderCode($ProviderCode)
-    {
-      $this->ProviderCode = $ProviderCode;
-      return $this;
-    }
+  /**
+   * @var time $HostCreateTime
+   */
+  protected $HostCreateTime = null;
 
-    /**
-     * @return typeProviderLocatorCode
-     */
-    public function getProviderLocatorCode()
-    {
-      return $this->ProviderLocatorCode;
-    }
+  /**
+   * @var \DateTime $ModifiedDate
+   */
+  protected $ModifiedDate = null;
 
-    /**
-     * @param typeProviderLocatorCode $ProviderLocatorCode
-     * @return \FilippoToso\Travelport\UniversalRecord\ProviderReservationInfo
-     */
-    public function setProviderLocatorCode($ProviderLocatorCode)
-    {
-      $this->ProviderLocatorCode = $ProviderLocatorCode;
-      return $this;
-    }
+  /**
+   * @var typePCC $OwningPCC
+   */
+  protected $OwningPCC = null;
 
-    /**
-     * @return typeSupplierCode
-     */
-    public function getSupplierCode()
-    {
-      return $this->SupplierCode;
-    }
+  /**
+   * @param typeRef $Key
+   * @param typeProviderCode $ProviderCode
+   * @param typeProviderLocatorCode $LocatorCode
+   * @param \DateTime $CreateDate
+   * @param date $HostCreateDate
+   * @param time $HostCreateTime
+   * @param \DateTime $ModifiedDate
+   * @param typePCC $OwningPCC
+   */
+  public function __construct(
+    $Key = null,
+    $ProviderCode = null,
+    $LocatorCode = null,
+    \DateTime $CreateDate = null,
+    $HostCreateDate = null,
+    $HostCreateTime = null,
+    \DateTime $ModifiedDate = null,
+    $OwningPCC = null
+  ) {
+    $this->Key = $Key;
+    $this->ProviderCode = $ProviderCode;
+    $this->LocatorCode = $LocatorCode;
+    $this->CreateDate = $CreateDate ? $CreateDate->format(\DateTime::ATOM) : null;
+    $this->HostCreateDate = $HostCreateDate;
+    $this->HostCreateTime = $HostCreateTime;
+    $this->ModifiedDate = $ModifiedDate ? $ModifiedDate->format(\DateTime::ATOM) : null;
+    $this->OwningPCC = $OwningPCC;
+  }
 
-    /**
-     * @param typeSupplierCode $SupplierCode
-     * @return \FilippoToso\Travelport\UniversalRecord\ProviderReservationInfo
-     */
-    public function setSupplierCode($SupplierCode)
-    {
-      $this->SupplierCode = $SupplierCode;
-      return $this;
-    }
+  /**
+   * @return typeRef
+   */
+  public function getKey()
+  {
+    return $this->Key;
+  }
 
+  /**
+   * @param typeRef $Key
+   * @return \FilippoToso\Travelport\Rail\ProviderReservationInfo
+   */
+  public function setKey($Key)
+  {
+    $this->Key = $Key;
+    return $this;
+  }
+
+  /**
+   * @return typeProviderCode
+   */
+  public function getProviderCode()
+  {
+    return $this->ProviderCode;
+  }
+
+  /**
+   * @param typeProviderCode $ProviderCode
+   * @return \FilippoToso\Travelport\Rail\ProviderReservationInfo
+   */
+  public function setProviderCode($ProviderCode)
+  {
+    $this->ProviderCode = $ProviderCode;
+    return $this;
+  }
+
+  /**
+   * @return typeProviderLocatorCode
+   */
+  public function getLocatorCode()
+  {
+    return $this->LocatorCode;
+  }
+
+  /**
+   * @param typeProviderLocatorCode $LocatorCode
+   * @return \FilippoToso\Travelport\Rail\ProviderReservationInfo
+   */
+  public function setLocatorCode($LocatorCode)
+  {
+    $this->LocatorCode = $LocatorCode;
+    return $this;
+  }
+
+  /**
+   * @return \DateTime
+   */
+  public function getCreateDate()
+  {
+    return $this->CreateDate;
+  }
+
+  /**
+   * @param \DateTime $CreateDate
+   * @return \FilippoToso\Travelport\Rail\ProviderReservationInfo
+   */
+  public function setCreateDate(\DateTime $CreateDate)
+  {
+    $this->CreateDate = $CreateDate->format(\DateTime::ATOM);
+    return $this;
+  }
+
+  /**
+   * @return date
+   */
+  public function getHostCreateDate()
+  {
+    return $this->HostCreateDate;
+  }
+
+  /**
+   * @param date $HostCreateDate
+   * @return \FilippoToso\Travelport\Rail\ProviderReservationInfo
+   */
+  public function setHostCreateDate($HostCreateDate)
+  {
+    $this->HostCreateDate = $HostCreateDate;
+    return $this;
+  }
+
+  /**
+   * @return time
+   */
+  public function getHostCreateTime()
+  {
+    return $this->HostCreateTime;
+  }
+
+  /**
+   * @param time $HostCreateTime
+   * @return \FilippoToso\Travelport\Rail\ProviderReservationInfo
+   */
+  public function setHostCreateTime($HostCreateTime)
+  {
+    $this->HostCreateTime = $HostCreateTime;
+    return $this;
+  }
+
+  /**
+   * @return \DateTime
+   */
+  public function getModifiedDate()
+  {
+    return $this->ModifiedDate;
+  }
+
+  /**
+   * @param \DateTime $ModifiedDate
+   * @return \FilippoToso\Travelport\Rail\ProviderReservationInfo
+   */
+  public function setModifiedDate(\DateTime $ModifiedDate)
+  {
+    $this->ModifiedDate = $ModifiedDate->format(\DateTime::ATOM);
+    return $this;
+  }
+
+  /**
+   * @return typePCC
+   */
+  public function getOwningPCC()
+  {
+    return $this->OwningPCC;
+  }
+
+  /**
+   * @param typePCC $OwningPCC
+   * @return \FilippoToso\Travelport\Rail\ProviderReservationInfo
+   */
+  public function setOwningPCC($OwningPCC)
+  {
+    $this->OwningPCC = $OwningPCC;
+    return $this;
+  }
 }
