@@ -1,7 +1,5 @@
 # PHP client library for Travelport SOAP API
 
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/filippo-toso/travelport.svg?style=flat-square)](https://packagist.org/packages/filippo-toso/travelport)
-
 With this library you can call the Travelport SOAP methods in a object oriented way.
 
 ## Installation
@@ -9,7 +7,7 @@ With this library you can call the Travelport SOAP methods in a object oriented 
 You can install the package via composer:
 
 ```bash
-composer require filippo-toso/travelport
+composer require omeron/travelport-uapi-client
 ```
 
 ## Usage
